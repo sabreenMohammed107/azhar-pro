@@ -24,10 +24,10 @@
       <ul id="create" class="collapse" aria-labelledby="tables" data-parent="#side-nav-accordion">
 
       <li> <a href="{{route('students.index')}}">{{ __('Students') }} </a> </li>
-      <li> <a href="#">{{ __('Size') }} </a> </li>
+      <!-- <li> <a href="#">{{ __('Size') }} </a> </li>
       
         <li> <a href="#">{{ __('Color') }} </a> </li>
-        <li> <a href="#">{{ __('Shop') }}</a> </li>
+        <li> <a href="#">{{ __('Shop') }}</a> </li> -->
      
       
 
@@ -39,10 +39,10 @@
     <!-- product  -->
     <li class="menu-item">
         <a href="#" class="has-chevron" data-toggle="collapse" data-target="#contactsdropdown" aria-expanded="false" aria-controls="contactsdropdown">
-        <span><i class="material-icons fs-16">assignment</i>{{ __('product') }}</span>
+        <span><i class="material-icons fs-16">assignment</i>{{ __('Data Controller') }}</span>
       </a>
         <ul id="contactsdropdown" class="collapse" aria-labelledby="basic-elements" data-parent="#side-nav-accordion">
-          <li> <a href="#">{{ __('product') }}</a> </li>
+          <li> <a href="#">{{ __('Data') }}</a> </li>
          
         </ul>
       </li>
