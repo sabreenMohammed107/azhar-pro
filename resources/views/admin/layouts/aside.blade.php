@@ -3,7 +3,7 @@
 
  <!-- Logo -->
  <div class="logo-sn ms-d-block-lg">
-   <a class="pl-0 ml-0 text-center" href="#"> <img src="{{ asset('assets/img/logo.png')}}" alt="logo"> </a>
+   <a class="pl-0 ml-0 text-center" href="#"> <img src="{{asset('assets/img/logoIcon.jpg')}}" width="100" alt="logo"> </a>
  </div>
 
  <!-- Navigation -->
@@ -23,7 +23,7 @@
       </a>
       <ul id="create" class="collapse" aria-labelledby="tables" data-parent="#side-nav-accordion">
 
-      <li> <a href="#">{{ __('Brands') }} </a> </li>
+      <li> <a href="{{route('students.index')}}">{{ __('Students') }} </a> </li>
       <li> <a href="#">{{ __('Size') }} </a> </li>
       
         <li> <a href="#">{{ __('Color') }} </a> </li>

@@ -8,7 +8,7 @@
   </div>
 
   <div class="logo-sn logo-sm ms-d-block-sm">
-    <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="#"><img src="{{asset('public/assets/img/logo-sm-dark.png')}}" alt="logo"> </a>
+    <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="#"><img src="{{asset('assets/img/logoIcon.jpg')}}" width="50" alt="logo"> </a>
   </div>
 
   <ul class="ms-nav-list ms-inline mb-0" id="ms-nav-options">
@@ -212,15 +212,7 @@
        
         
         <li class="dropdown-divider"></li>
-        <li class="ms-dropdown-list">
-
-        
-            <a class="media fs-14 p-2" href="#"> <span><i class="flaticon-user mr-2"></i>Users-List</span>
-            </a>
-
-        </li>
-      
-        <li class="dropdown-divider"></li>
+     
         <li class="dropdown-menu-footer">
           <a class="media fs-14 p-2" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

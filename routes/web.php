@@ -23,6 +23,7 @@ Auth::routes();
 // admin routes
 Route::group(['middleware' => 'is_admin'], function () {
     Route::get('admin/home', 'Admin\IndexController@index')->name('admin.home');
+    Route::resource('admin/students', 'Admin\StudentsController');
 
 });
 

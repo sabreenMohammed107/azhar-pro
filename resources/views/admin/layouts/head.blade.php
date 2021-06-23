@@ -32,7 +32,7 @@
     <!-- Mystic styles -->
     <link href="{{ asset('assets/css/style.css')}}" rel="stylesheet">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/logoIcon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/logoIcon.jpg')}}">
 
     <!-- Styles -->
     <!-- Latest compiled and minified CSS -->
