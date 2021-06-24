@@ -31,6 +31,7 @@ class CreateStudentsTable extends Migration
             $table->bigInteger('current_year_id')->unsigned();
             $table->bigInteger('division_id')->unsigned();
             $table->bigInteger('department_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned()->nullable();
             $table->bigInteger('education_status_id')->unsigned();
             $table->bigInteger('current_grade_id')->unsigned();
             $table->string('guarantee_grade_img')->nullable();

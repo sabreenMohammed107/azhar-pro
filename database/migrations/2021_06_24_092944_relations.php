@@ -13,10 +13,7 @@ class Relations extends Migration
      */
     public function up()
     {
-        //  This is Realations for the users Table ..
-        Schema::table('users', function (Blueprint $table) {
-            $table->foreign('student_id')->references('id')->on('students'); 
-        });
+        
           //  This is Realations for the leaves_requests Table ..
           Schema::table('leaves_requests', function (Blueprint $table) {
             $table->foreign('student_id')->references('id')->on('students'); 
@@ -33,6 +30,7 @@ class Relations extends Migration
              Schema::table('students', function (Blueprint $table) {
                 $table->foreign('city_id')->references('id')->on('cities'); 
                 $table->foreign('faculty_id')->references('id')->on('faculties'); 
+                $table->foreign('user_id')->references('id')->on('users'); 
                 $table->foreign('current_year_id')->references('id')->on('education_years'); 
                 $table->foreign('division_id')->references('id')->on('divisions'); 
                 $table->foreign('department_id')->references('id')->on('departments'); 

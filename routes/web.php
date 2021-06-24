@@ -37,6 +37,9 @@ Route::group(['middleware' => 'is_admin'], function () {
     //data controll
     Route::resource('admin/building', 'Admin\BuildingController');
     Route::resource('admin/room', 'Admin\RoomsController');
+     //request
+     Route::resource('admin/accomodationRequest', 'Admin\AccomodationRequestController');
+     Route::resource('admin/leaveRequest', 'Admin\LeaveRequestController');
 
 });
 

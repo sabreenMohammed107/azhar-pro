@@ -32,8 +32,8 @@
 						@foreach($rows as $index => $row)
 							<tr>
 							<td>{{ $index +1 }}</td>
-			  						<td>{{$row->name}}</td>
-                    <td>Faculty </td>
+			  						<td>{{$row->user->name ?? ''}}</td>
+                    <td>{{$row->faculty->name ?? ''}} </td>
 									  <td>
                                       <a href="{{ route('students.edit', $row->id) }}" class="btn btn-info d-inline-block" 
                                       >Show</a>

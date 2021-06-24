@@ -26,7 +26,7 @@
      
       
       <li> <a href="{{route('educationYear.index')}}">{{ __('Education Year') }} </a> </li>
-        <li> <a href="{{route('requestStatus.index')}}">{{ __('Request Status') }}</a> </li>
+        <!-- <li> <a href="{{route('requestStatus.index')}}">{{ __('Request Status') }}</a> </li> -->
       
       <li> <a href="{{route('city.index')}}">{{ __('Cities') }} </a> </li>
       
@@ -76,8 +76,8 @@
       </a>
         <ul id="callsdropdown" class="collapse" aria-labelledby="basic-elements" data-parent="#side-nav-accordion">
         
-          <li> <a href="#">Accomodation Requests</a> </li>
-          <li> <a href="#">Leaves Requests</a> </li>
+          <li> <a href="{{route('accomodationRequest.index')}}">Accomodation Requests</a> </li>
+          <li> <a href="{{route('leaveRequest.index')}}">Leaves Requests</a> </li>
          
         </ul>
       </li>

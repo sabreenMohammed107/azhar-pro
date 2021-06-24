@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Student;
-use App\User;
+use App\Models\Accomodation_request;
+use App\Models\Building;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
-class StudentsController extends Controller
+class AccomodationRequestController extends Controller
 {
     protected $object;
     protected $viewName;
@@ -20,11 +20,12 @@ class StudentsController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Accomodation_request $object)
     {
         $this->middleware('is_admin');
-        $this->viewName = 'admin.students.';
-        $this->routeName = 'admin/students.';
+        $this->object = $object;
+        $this->viewName = 'admin.accomodationRequest.';
+        $this->routeName = 'accomodationRequest.';
         $this->message = 'The Data has been saved';
         $this->errormessage = 'check Your Data ';
     }
@@ -35,7 +36,7 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        $rows=Student::orderBy("created_at", "Desc")->get();
+        $rows=Accomodation_request::orderBy("created_at", "Desc")->get();
       
       
         return view($this->viewName.'index', compact('rows'));
@@ -81,7 +82,8 @@ class StudentsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $row = Accomodation_request::where('id', '=', $id)->first();
+             return view($this->viewName . 'edit', compact('row'));
     }
 
     /**
@@ -93,7 +95,14 @@ class StudentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = [];
+        if ($request->get('action') == 'Reject') {
+            $data['request_status_id'] =3;
+        }elseif ($request->get('action') == 'confirm') {
+            $data['request_status_id'] =2;
+        }
+        $this->object::findOrFail($id)->update($data);
+        return redirect()->route($this->routeName . 'index')->with('flash_success', $this->message);
     }
 
     /**
@@ -113,6 +122,6 @@ class StudentsController extends Controller
 
         }
         return redirect()->back()->with('flash_success', 'Data Has Been Deleted Successfully !');
-    
     }
+    
 }
