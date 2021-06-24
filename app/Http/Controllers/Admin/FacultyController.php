@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\User;
+use App\Models\Faculty;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
-class StudentsController extends Controller
+class FacultyController extends Controller
 {
     protected $object;
     protected $viewName;
@@ -19,11 +19,12 @@ class StudentsController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Faculty $object)
     {
         $this->middleware('is_admin');
-        $this->viewName = 'admin.students.';
-        $this->routeName = 'admin/students.';
+        $this->object = $object;
+        $this->viewName = 'admin.faculty.';
+        $this->routeName = 'faculty.';
         $this->message = 'The Data has been saved';
         $this->errormessage = 'check Your Data ';
     }
@@ -34,7 +35,7 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        $rows=User::where('is_admin','=',0)->orderBy("created_at", "Desc")->get();
+        $rows=Faculty::orderBy("created_at", "Desc")->get();
       
       
         return view($this->viewName.'index', compact('rows'));
@@ -58,7 +59,8 @@ class StudentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->object::create($request->except('_token'));
+        return redirect()->route($this->routeName.'index')->with('flash_success', $this->message);
     }
 
     /**
@@ -92,7 +94,8 @@ class StudentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->object::findOrFail($id)->update($request->except('_token'));
+        return redirect()->route($this->routeName . 'index')->with('flash_success', $this->message);
     }
 
     /**

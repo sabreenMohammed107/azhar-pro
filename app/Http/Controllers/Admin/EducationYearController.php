@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\User;
+use App\Models\Education_year;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
-class StudentsController extends Controller
+class EducationYearController extends Controller
 {
     protected $object;
     protected $viewName;
@@ -14,16 +14,17 @@ class StudentsController extends Controller
     protected $message;
     protected $errormessage;
 
-     /**
+    /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Education_year $object)
     {
         $this->middleware('is_admin');
-        $this->viewName = 'admin.students.';
-        $this->routeName = 'admin/students.';
+        $this->object = $object;
+        $this->viewName = 'admin.educationYear.';
+        $this->routeName = 'educationYear.';
         $this->message = 'The Data has been saved';
         $this->errormessage = 'check Your Data ';
     }
@@ -34,10 +35,9 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        $rows=User::where('is_admin','=',0)->orderBy("created_at", "Desc")->get();
-      
-      
-        return view($this->viewName.'index', compact('rows'));
+        $rows = Education_year::orderBy("created_at", "Desc")->get();
+
+        return view($this->viewName . 'index', compact('rows'));
     }
 
     /**
@@ -58,7 +58,8 @@ class StudentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->object::create($request->except('_token'));
+        return redirect()->route($this->routeName . 'index')->with('flash_success', $this->message);
     }
 
     /**
@@ -92,7 +93,8 @@ class StudentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->object::findOrFail($id)->update($request->except('_token'));
+        return redirect()->route($this->routeName . 'index')->with('flash_success', $this->message);
     }
 
     /**
@@ -115,3 +117,4 @@ class StudentsController extends Controller
     
     }
 }
+

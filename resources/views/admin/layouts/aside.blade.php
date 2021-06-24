@@ -23,51 +23,64 @@
       </a>
       <ul id="create" class="collapse" aria-labelledby="tables" data-parent="#side-nav-accordion">
 
-      <li> <a href="{{route('students.index')}}">{{ __('Students') }} </a> </li>
-      <!-- <li> <a href="#">{{ __('Size') }} </a> </li>
-      
-        <li> <a href="#">{{ __('Color') }} </a> </li>
-        <li> <a href="#">{{ __('Shop') }}</a> </li> -->
      
       
+      <li> <a href="{{route('educationYear.index')}}">{{ __('Education Year') }} </a> </li>
+        <li> <a href="{{route('requestStatus.index')}}">{{ __('Request Status') }}</a> </li>
+      
+      <li> <a href="{{route('city.index')}}">{{ __('Cities') }} </a> </li>
+      
+        <li> <a href="{{route('faculty.index')}}">{{ __('Faculties') }} </a> </li>
+        <li> <a href="{{route('educationStatus.index')}}">{{ __('Education Status') }}</a> </li>
+     
+        <li> <a href="{{route('division.index')}}">{{ __('Divisions') }} </a> </li>
+      
+      <li> <a href="{{route('department.index')}}">{{ __('Departments') }} </a> </li>
+      <li> <a href="{{route('grade.index')}}">{{ __('Grades') }}</a> </li>
+
+      <li> <a href="{{route('parentRelation.index')}}">{{ __('Parent Realtions') }} </a> </li>
 
       </ul>
   </li>
   <!--  Setup  -->
 
-  <!--  Sending  -->
-    <!-- product  -->
+  
+    <!-- Controller  -->
     <li class="menu-item">
         <a href="#" class="has-chevron" data-toggle="collapse" data-target="#contactsdropdown" aria-expanded="false" aria-controls="contactsdropdown">
         <span><i class="material-icons fs-16">assignment</i>{{ __('Data Controller') }}</span>
       </a>
         <ul id="contactsdropdown" class="collapse" aria-labelledby="basic-elements" data-parent="#side-nav-accordion">
-          <li> <a href="#">{{ __('Data') }}</a> </li>
+          <li> <a href="{{route('building.index')}}">{{ __('Buildings') }}</a> </li>
+          <li> <a href="{{route('room.index')}}">{{ __('Rooms') }}</a> </li>
+       
          
         </ul>
       </li>
     <!--  Clients  -->
     <!-- Leads  -->
-    <!-- <li class="menu-item">
+    <li class="menu-item">
         <a href="#" class="has-chevron" data-toggle="collapse" data-target="#callsdropdown1" aria-expanded="false" aria-controls="callsdropdown">
-        <span><i class="material-icons fs-16">call</i>{{ __('leads') }}</span>
+        <span><i class="material-icons fs-16">call</i>{{ __('Students') }}</span>
       </a>
         <ul id="callsdropdown1" class="collapse" aria-labelledby="basic-elements" data-parent="#side-nav-accordion">
-          <li> <a href="#">{{ __('leads') }}</a> </li>
+        <li> <a href="{{route('students.index')}}">{{ __('Students') }} </a> </li>
          
         </ul>
-      </li> -->
+      </li>
     <!--  Leads  -->
     <!-- Todo List -->
-    <!-- <li class="menu-item">
+    <li class="menu-item">
         <a href="#" class="has-chevron" data-toggle="collapse" data-target="#callsdropdown" aria-expanded="false" aria-controls="callsdropdown">
-        <span><i class="material-icons fs-16">call</i>ToDo List</span>
+        <span><i class="material-icons fs-16">call</i>Requests</span>
       </a>
         <ul id="callsdropdown" class="collapse" aria-labelledby="basic-elements" data-parent="#side-nav-accordion">
-          <li> <a href="#">ToDo List</a> </li>
+        
+          <li> <a href="#">Accomodation Requests</a> </li>
+          <li> <a href="#">Leaves Requests</a> </li>
          
         </ul>
-      </li> -->
+      </li>
   
      
     
