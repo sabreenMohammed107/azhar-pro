@@ -35,7 +35,7 @@
 			  						<td>{{$row->user->name ?? ''}}</td>
                     <td>{{$row->faculty->name ?? ''}} </td>
 									  <td>
-                                      <a href="{{ route('students.edit', $row->id) }}" class="btn btn-info d-inline-block" 
+                                      <a href="{{ route('students.show', $row->id) }}" class="btn btn-info d-inline-block" 
                                       >Show</a>
                                         <a href="#" onclick="destroy('this Student','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
                                          <form id="delete_{{$row->id}}" action="{{ route('students.destroy', $row->id) }}"  method="POST" style="display: none;">

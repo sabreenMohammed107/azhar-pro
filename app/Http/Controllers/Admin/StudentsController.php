@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Student;
+use App\Models\Parennt;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
@@ -70,7 +71,9 @@ class StudentsController extends Controller
      */
     public function show($id)
     {
-        //
+        $row = Student::where('id', '=', $id)->first();
+        $parentData=Parennt::where('student_id','=',$id)->firstOrNew();
+        return view($this->viewName . 'edit', compact('row','parentData'));
     }
 
     /**
@@ -81,7 +84,7 @@ class StudentsController extends Controller
      */
     public function edit($id)
     {
-        //
+  
     }
 
     /**
