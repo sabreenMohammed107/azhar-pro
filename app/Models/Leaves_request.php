@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Leaves_request extends Model
 {
     protected $fillable = [
+        'leave_code',
         'student_id',
         'education_year_id',
         'from_date',

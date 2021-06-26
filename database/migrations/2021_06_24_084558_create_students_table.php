@@ -15,7 +15,7 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->string('accomodation_code')->nullable();
+            
             $table->string('mobile')->nullable();
             $table->string('phone')->nullable();
             $table->boolean('gender')->nullable();
@@ -25,15 +25,15 @@ class CreateStudentsTable extends Migration
             $table->string('nid_issue_place')->nullable();
             $table->dateTime('nid_issue_date',6)->nullable();
             $table->string('address')->nullable();
-            $table->bigInteger('city_id')->unsigned();
-            $table->bigInteger('faculty_id')->unsigned();
+            $table->bigInteger('city_id')->unsigned()->nullable();
+            $table->bigInteger('faculty_id')->unsigned()->nullable();
             $table->string('faculty_code')->nullable();
-            $table->bigInteger('current_year_id')->unsigned();
-            $table->bigInteger('division_id')->unsigned();
-            $table->bigInteger('department_id')->unsigned();
+            $table->bigInteger('current_year_id')->unsigned()->nullable();
+            $table->bigInteger('division_id')->unsigned()->nullable();
+            $table->bigInteger('department_id')->unsigned()->nullable();
             $table->bigInteger('user_id')->unsigned()->nullable();
-            $table->bigInteger('education_status_id')->unsigned();
-            $table->bigInteger('current_grade_id')->unsigned();
+            $table->bigInteger('education_status_id')->unsigned()->nullable();
+            $table->bigInteger('current_grade_id')->unsigned()->nullable();
             $table->string('guarantee_grade_img')->nullable();
             $table->string('guarantee_work_img')->nullable();
             $table->string('military_service_complete')->nullable();

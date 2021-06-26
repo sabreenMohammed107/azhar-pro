@@ -15,6 +15,7 @@ class CreateLeavesRequestsTable extends Migration
     {
         Schema::create('leaves_requests', function (Blueprint $table) {
             $table->id();
+            $table->string('leave_code')->nullable();
             $table->bigInteger('student_id')->unsigned();
             $table->bigInteger('education_year_id')->unsigned();
             $table->dateTime('from_date',6)->nullable();

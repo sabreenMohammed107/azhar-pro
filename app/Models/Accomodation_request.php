@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Accomodation_request extends Model
 {
     protected $fillable = [
-        'request_no',
+        'request_no', 'accomodation_code',
     'student_id',
     'education_year_id',
     'request_date',

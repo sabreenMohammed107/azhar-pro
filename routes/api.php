@@ -16,15 +16,26 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
-    // accomodate
+    
    
 });
 
 Route::post('register', 'Api\AuthController@register');
 Route::post('login', 'Api\AuthController@login');
+// buildings
+Route::get('buildings', 'Api\BuildingController@index');
+Route::get('show-building/{id}', 'Api\BuildingController@show');
+Route::get('show-room/{id}', 'Api\BuildingController@showRoom');
 Route::middleware('auth:api')->group(function () {
-    Route::post('/logout', 'Api\AuthController@logout')->middleware('auth:api');
-    Route::post('accomodate-request', 'Api\AccomodationController@accomodateRequest')->middleware('auth:api');
+
+    Route::post('logout', 'Api\AuthController@logout');
+    // accomodate
+    Route::post('accomodate-request', 'Api\AccomodationController@accomodateRequest');
+    Route::post('accomodate-status/{code}', 'Api\AccomodationController@accomodateStatus');
+
+    // leaves
+    Route::post('leave-request', 'Api\LeavesController@leaveRequest');
+    Route::post('leave-status/{code}', 'Api\LeavesController@leaveStatus');
     });
 
 

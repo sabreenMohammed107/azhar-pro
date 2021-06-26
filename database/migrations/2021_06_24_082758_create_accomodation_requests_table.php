@@ -15,6 +15,7 @@ class CreateAccomodationRequestsTable extends Migration
     {
         Schema::create('accomodation_requests', function (Blueprint $table) {
             $table->id();
+            $table->string('accomodation_code')->nullable();
             $table->string('request_no')->nullable();
             $table->bigInteger('student_id')->unsigned();
             $table->bigInteger('education_year_id')->unsigned();
