@@ -18,7 +18,7 @@ class CreateParentsTable extends Migration
             $table->string('name')->nullable();
             $table->string('mobile')->nullable();
             $table->string('phone')->nullable();
-            $table->bigInteger('parent_relation_id')->unsigned();
+            $table->bigInteger('parent_relation_id')->unsigned()->nullable();
             $table->string('address')->nullable();
             $table->string('job')->nullable();
             $table->string('nid')->nullable();

@@ -94,7 +94,7 @@
 				</div>
 				<div class="col-md-6 form-group">
 					<label for="city">City</label>
-					<input type="text" readonly  value="{{$row->city->name}}" class="form-control form-control-lg">
+					<input type="text" readonly  value="{{$row->city->name ?? ''}}" class="form-control form-control-lg">
 				</div>
 				<div class="col-md-6 form-group">
 					<label for="faculty">Faculty</label>
