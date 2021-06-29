@@ -132,9 +132,10 @@ else{
 
     }else{
         Session::forget('message');
-        Session::flash('error', 'Update not complete something error !'); 
-        return redirect('/student/leave-request');
-     
+        Session::forget('info');
+        Session::flash('error', 'You Dont Have Accomodation!'); 
+        // return redirect('/student/leave-request');
+    return redirect()->back();
     }
 
 }

@@ -43,7 +43,7 @@
               <div class="feature-1-content">
                 <h2>Request Accomodation</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi hendrerit elit</p>
-                <p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p>
+                <!-- <p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p> -->
               </div>
             </div>
           </div>
@@ -55,7 +55,7 @@
               <div class="feature-1-content">
                 <h2>Accomodation Status </h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi hendrerit elit</p>
-                <p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p>
+                <!-- <p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p> -->
               </div>
             </div> 
           </div>
@@ -67,7 +67,7 @@
               <div class="feature-1-content">
                 <h2>Buildings and Room</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi hendrerit elit</p>
-                <p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p>
+                <!-- <p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p> -->
               </div>
             </div> 
           </div>
@@ -79,7 +79,7 @@
 					<div class="feature-1-content">
 						<h2>Leaves Requests</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi hendrerit elit</p>
-						<p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p>
+						<!-- <p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p> -->
 					</div>
 				</div>
 			</div>
@@ -99,7 +99,7 @@
           <div class="col-lg-8">
             <p class="lead text-white">Al-Azhar Al-Sharif was founded in Cairo, Egypt in 970 AD and despite not gaining university status until 1961, it is still technically among the world’s oldest universities.</p>
             <p class="text-white">For over a millennium, it has been a hugely respected centre of Islamic learning and began as a "madrasa," teaching students from primary to tertiary level. Named after the mosque in Cairo’s medieval quarter, it was founded by the Shi’ite Fatimid Dynasty in 970 AD and was formally organised by 988 AD.</p>
-            <p><a href="#" class="clr-gold">Read More</a></p>
+            <!-- <p><a href="#" class="clr-gold">Read More</a></p> -->
           </div>
         </div>
       </div>

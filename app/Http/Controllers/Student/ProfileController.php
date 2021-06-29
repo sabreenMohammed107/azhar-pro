@@ -13,6 +13,7 @@ use App\Models\Grade;
 use App\Models\Parennt;
 use App\Models\Parent_relation;
 use App\Models\Student;
+use App\Models\Students_room;
 use App\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -43,8 +44,10 @@ class ProfileController extends Controller
             // }
         }
         
-       
-        return view($this->viewName.'profile', compact('row','parentData'));
+       //student-room
+
+$studentRoom=Students_room::where('student_id',$row->id)->first();
+        return view($this->viewName.'profile', compact('row','parentData','studentRoom'));
     }
 /**
      * Display the specified resource.
@@ -78,6 +81,7 @@ class ProfileController extends Controller
         $departments=Department::all();
         $divisions=Division::all();
 $currentYear=Education_year::where('current',1)->first();
+
         // return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
         return view($this->viewName.'edit-profile', compact('row','parentData','currentYear','cities','faculties','relations','grades','status','departments','divisions'));
     }

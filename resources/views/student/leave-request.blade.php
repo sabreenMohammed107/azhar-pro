@@ -25,10 +25,10 @@
 
 
 @endif
-@if (Session::get('error'))
-<div id="alertDiv" class="alert alert-info alert-block">
+@if ($error=Session::get('error'))
+<div id="alertDiv" class="alert alert-danger alert-block">
 	<button type="button" id="alertClose" class="close" data-dismiss="alert">×</button>
-        <strong style="color:black;font-weight:bold">Error In Saving Or Update</strong>
+        <strong style="color:black;font-weight:bold">{{$error}}</strong>
 </div>
 					@endif
 

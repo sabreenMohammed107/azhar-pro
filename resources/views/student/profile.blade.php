@@ -241,6 +241,38 @@ if ($row->nid_issue_date) {
 						</div>
 					</div>
 				</div>
+
+
+				<!-- new Data -->
+				<div class="col-lg-12 mt-3">
+					<div class="card shadow-sm">
+						<div class="card-header bg-transparent text-center">
+							<h3>Accomodation Data</h3>
+						</div>
+						@if($studentRoom)
+						<div class="card-body">
+							<div class="row">
+								<div class="col-md-6 form-group">
+									<label for="fname">Room Img :</label>
+									<p><img width="200" src="{{ asset('uploads/rooms')}}/{{$studentRoom->room->image }}" alt=""></p>
+								</div>
+								<div class="col-md-6 form-group">
+									<label for="tel">Room No :</label>
+									<p>{{$studentRoom->room->room_no ?? ''}}</p>
+									<label for="tel">Building Room :</label>
+									<p>{{$studentRoom->room->building->name ?? ''}}</p>
+									<label for="Relation">Education Year :</label>
+									<p>{{$studentRoom->education->name ?? ''}}</p>
+								</div>
+								
+								
+								
+							</div>
+						</div>
+						@endif
+					</div>
+				</div>
+				<!-- End New -->
 			</div>
         </div>
     </div>

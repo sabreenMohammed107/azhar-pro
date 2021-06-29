@@ -76,13 +76,11 @@
             @if (Auth::guard('student')->user())
 					<li><a href="{{ url('/student/all-accomodations') }}">All Accomodation Requests</a></li>
 					<li><a href="{{ url('/student/all-leaves') }}">All Leave Requests</a></li>
-			  			<li><a href="{{ url('/student/accomodate-status') }}">Accomodation Status</a></li>
-			  			<li><a href="{{ url('/student/leave-status') }}">Leave Status</a></li>
+			  			
               @else
               <li><a href="{{ url('student/login') }}">All Accomodation Requests</a></li>
 				    	<li><a href="{{ url('student/login') }}">All Leave Requests</a></li>
-			  			<li><a href="{{ url('student/login') }}">Accomodation Status</a></li>
-			  			<li><a href="{{ url('student/login') }}">Leave Status</a></li>
+			  		
 
                @endif
 			  		</ul>
