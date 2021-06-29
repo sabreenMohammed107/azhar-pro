@@ -57,7 +57,7 @@
                   <a href="{{url('buildings')}}" class="nav-link text-left">Buildings</a>
                 </li>
                 <li class="has-children">
-                  <a href="about.html" class="nav-link text-left">Requests</a>
+                  <a href="#" class="nav-link text-left">Requests</a>
                   <ul class="dropdown">
                   @if (Auth::guard('student')->user())
                     <li><a href="{{ url('/student/accomodate-request') }}">Accomodation Request</a></li>
@@ -71,7 +71,7 @@
                   </ul>
                 </li>
 			  	<li class="has-children">
-			  		<a href="about.html" class="nav-link text-left">Reports</a>
+			  		<a href="#" class="nav-link text-left">Reports</a>
 			  		<ul class="dropdown">
             @if (Auth::guard('student')->user())
 					<li><a href="{{ url('/student/all-accomodations') }}">All Accomodation Requests</a></li>
