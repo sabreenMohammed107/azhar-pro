@@ -29,8 +29,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
+    protected $redirectTo ='/admin';
+   
     /**
      * Create a new controller instance.
      *
@@ -53,10 +53,11 @@ class LoginController extends Controller
         if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
         {
             if (auth()->user()->is_admin == 1) {
-               
+               \Log::info("admin");
                 return redirect()->route('admin');
             }else{
-                return redirect()->route('home');
+                \Log::info("not admin");
+                return redirect()->route('login');
             }
         }else{
             return redirect()->route('login')
@@ -67,11 +68,7 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {   
-        $this->guard()->logout();
-        $request->session()->invalidate();
-
-        return $this->loggedOut($request) ?: redirect()
-            ->route('login')
-            ->with('message', 'You have been logged out');
+        \Auth::logout();
+        return redirect('/login');
     }
 }

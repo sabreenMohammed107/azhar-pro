@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Api\BaseController;
 use App\Models\Accomodation_request;
+use App\Models\Education_year;
 use App\Models\Leaves_request;
 use App\Models\Requests_status;
 use App\Models\Student;
@@ -48,13 +49,15 @@ $accomodate=Accomodation_request::where('student_id','=',$student->id)->where('r
         $input = [
             'leave_code'=>$max,
             'student_id' => $student->id,
-              'education_year_id' => $request->input('education_year_id'),
+             
               'from_date' => Carbon::parse($request->input('from_date')),
               'to_date' => Carbon::parse($request->input('to_date')),
               'request_date' => Carbon::parse($request->input('request_date')),
                             'request_status_id' => 1,
           ];
-
+if(Education_year::where('current','=',1)->first()){
+    $input['education_year_id'] = Education_year::where('current','=',1)->first()->id;
+}
           $leave = Leaves_request::create($input);
          
           return $this->sendResponse($leave, 'Leave Request Send Successfully');
@@ -74,7 +77,7 @@ $accomodate=Accomodation_request::where('student_id','=',$student->id)->where('r
      **/
     public function leaveStatus($code)
     {
-        $user = Auth::user();
+        $user =Auth::user();
         if ($user) {
             $student = Student::where('user_id', '=', $user->id)->first();
             $row = Leaves_request::where('student_id', '=', $student->id)->where('leave_code', '=', $code)->first();

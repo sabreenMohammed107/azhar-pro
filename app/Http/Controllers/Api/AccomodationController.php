@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Api\BaseController;
 use App\Models\Accomodation_request;
+use App\Models\Education_year;
 use App\Models\Parennt;
 use App\Models\Requests_status;
 use App\Models\Student;
@@ -26,8 +27,8 @@ class AccomodationController extends BaseController
         $user = Auth::user();
         $validator = Validator::make($request->all(), [
             // 'student_id' => 'required',
-            'education_year_id' => 'required',
-            // 'request_date' => 'required',
+            // 'education_year_id' => 'required',
+             'request_date' => 'required',
 
         ]);
 
@@ -80,20 +81,21 @@ class AccomodationController extends BaseController
                 }
                 $student->update($data);
                 //create parent Table
-                $parentArr = [
-                    'name' => $request->input('parent_name'),
-                    'mobile' => $request->input('parent_mobile'),
-                    'phone' => $request->input('parent_phone'),
-                    'parent_relation_id' => $request->input('parent_relation_id'),
-                    'address' => $request->input('parent_address'),
-                    'job' => $request->input('parent_job'),
-                    'nid' => $request->input('parent_nid'),
-                    'nid_issue_place' => $request->input('parent_nid_issue_place'),
-                    'nid_issue_date' => Carbon::parse($request->input('parent_nid_issue_date')),
-                    'student_id' => $student->id,
-                    'notes' => $request->input('parent_notes'),
-                ];
-                Parennt::create($parentArr);
+               //create parent Table
+        
+            $parrent = Parennt::where('student_id',$student->id)->firstOrNew();
+            $parrent->name = $request->input('pname');
+            $parrent->mobile = $request->input('pmobile');
+            $parrent->phone = $request->input('pphone');
+            $parrent->parent_relation_id = $request->input('parent_relation_id');
+            $parrent->address = $request->input('paddress');
+            $parrent->job = $request->input('pjob');
+            $parrent->nid = $request->input('pnid');
+            $parrent->nid_issue_place = $request->input('pnid_issue_place');
+            $parrent->nid_issue_date= Carbon::parse($request->input('pnid_issue_date'));
+            $parrent->student_id = $student->id;
+            $parrent->notes = $request->input('pnotes');
+            $parrent->save();
                 //create accomodation request
                 $max = Accomodation_request::latest('accomodation_code')->first();
 
@@ -102,12 +104,14 @@ class AccomodationController extends BaseController
                 $input = [
                     'accomodation_code' => $max,
                     'student_id' => $student->id,
-                    'education_year_id' => $request->input('education_year_id'),
+                    // 'education_year_id' => Education_year::where('current','=',1)->first()->id,
                     'request_date' => Carbon::parse($request->input('request_date')),
                     'notes' => $request->input('notes'),
                     'request_status_id' => 1,
                 ];
-
+                if(Education_year::where('current','=',1)->first()){
+                    $input['education_year_id'] = Education_year::where('current','=',1)->first()->id;
+                }
                 $accomodate = Accomodation_request::create($input);
                 DB::commit();
                 // Enable foreign key checks!

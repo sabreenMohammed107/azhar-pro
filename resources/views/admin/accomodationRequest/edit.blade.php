@@ -123,9 +123,9 @@
                        
                       <div class="col-md-12">
                               <div class="form-group">
-                                  <label  >{{ __('request no') }}</label>
+                                  <label  >{{ __('code no') }}</label>
                                   <div class="input-group">
-                                      <input type="text" id="newTitle" readonly name="request" value="{{$row->request_no}}" class="form-control"
+                                      <input type="text" id="newTitle" readonly name="request" value="{{$row->accomodation_code}}" class="form-control"
                                          placeholder="request">
                                   </div>
                               </div>

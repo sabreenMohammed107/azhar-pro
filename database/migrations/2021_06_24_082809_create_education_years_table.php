@@ -16,6 +16,7 @@ class CreateEducationYearsTable extends Migration
         Schema::create('education_years', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
+            $table->boolean('current')->nullable();
             $table->timestamps();
         });
     }

@@ -25,7 +25,7 @@
 						<thead>
 							<th>{{ __('#') }}</th>
 							<th>{{ __('name') }}</th>
-        
+              <th>{{ __('Current') }}</th>
 							<th>{{ __('actions') }}</th>
 						</thead>
 						<tbody>
@@ -33,7 +33,7 @@
 							<tr>
 							<td>{{ $index +1 }}</td>
 			  						<td>{{$row->name}}</td>
-                 
+                    <td>@if($row->current==1) Yes @else No @endif</td>
 									  <td>
                                       <a  href="#"  data-toggle="modal" data-target="#addModel{{$row->id}}" class="btn btn-info d-inline-block" 
                                       >edit</a>
@@ -70,7 +70,12 @@
                               </div>
                           </div>
                       </div>
-                     
+                      <div class="col-md-12">
+                          <div class="form-group">
+                          <input type="checkbox" class="form-check-input" name="current" @if($row->current==1) checked value="1" @else  value="0"  @endif id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Current</label>
+                          </div>
+                      </div>
                       
                   </div>
                   <div class="input-group d-flex justify-content-end text-center">
@@ -120,7 +125,12 @@
                               </div>
                           </div>
                          
-                          
+                          <div class="col-md-12">
+                          <div class="form-group">
+                          <input type="checkbox" class="form-check-input" name="current" checked value="1" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Current</label>
+                          </div>
+                      </div> 
                       </div>
                       <div class="input-group d-flex justify-content-end text-center">
                         <input type="button" value="Cancel" class="btn btn-dark mx-2" data-dismiss="modal" aria-label="Close"> 

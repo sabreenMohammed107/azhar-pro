@@ -7,15 +7,7 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    
 
     /**
      * Display a listing of the resource.
@@ -24,7 +16,10 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('home');
+        \Session::forget('message');
+        \Session::forget('info');
+        \Session::forget('error');
+        return view('student.home');
     }
 
     /**

@@ -17,10 +17,11 @@ class CreateAccomodationRequestsTable extends Migration
             $table->id();
             $table->string('accomodation_code')->nullable();
             $table->string('request_no')->nullable();
-            $table->bigInteger('student_id')->unsigned();
-            $table->bigInteger('education_year_id')->unsigned();
+            $table->bigInteger('student_id')->unsigned()->nullable();
+            $table->bigInteger('education_year_id')->unsigned()->nullable();
             $table->dateTime('request_date',6)->nullable();
-            $table->bigInteger('request_status_id')->unsigned();
+            $table->bigInteger('request_status_id')->unsigned()->nullable();
+           
             $table->text('notes')->nullable();
             $table->timestamps();
         });

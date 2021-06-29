@@ -38,13 +38,29 @@
 							<td>{{ $index +1 }}</td>
                                       <td>{{$row->student->user->name}}</td>
                                       <td>{{$row->education->name ?? ''}}</td>
-                                      <td> <?php $date2 = date_create($row->from_date)?>
-                  {{ date_format($date2,"d-m-Y") }}</td>
-                  <td> <?php $date3 = date_create($row->to_date)?>
-                  {{ date_format($date3,"d-m-Y") }}</td>
+                                      <td> <?php $date2 = date_create($row->from_date);
+                    if ($row->from_date) {
+                            echo date_format($date2,"d-m-Y");
+                        } else {
+                            echo " ";
+                        }
+                        ?>
+				  </td>
+                  <td> <?php $date3 = date_create($row->to_date);
+                    if ($row->to_date) {
+                            echo date_format($date3,"d-m-Y");
+                        } else {
+                            echo " ";
+                        }
+                        ?></td>
                                       <td>{{$row->status->name ?? ''}}</td>
-                                      <td> <?php $date = date_create($row->request_date)?>
-                  {{ date_format($date,"d-m-Y") }}</td>
+                                      <td> <?php $date = date_create($row->request_date);
+                    if ($row->request_date) {
+                            echo date_format($date,"d-m-Y");
+                        } else {
+                            echo " ";
+                        }
+                        ?></td>
 									  <td>
                                       <a href="{{ route('leaveRequest.edit', $row->id) }}" class="btn btn-info d-inline-block">edit</a>
                                         <a href="#" onclick="destroy('this Leave','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>

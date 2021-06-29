@@ -24,7 +24,7 @@
 					<table id="courseEval" class="dattable table table-striped thead-dark  w-100">
 						<thead>
 							<th>{{ __('#') }}</th>
-                            <th>{{ __('Request no') }}</th>
+                            <th>{{ __('code no') }}</th>
 							<th>{{ __('Student') }}</th>
                             <th>{{ __('Education Year') }}</th>
                             <th>{{ __('Request Status') }}</th>
@@ -35,12 +35,17 @@
 						@foreach($rows as $index => $row)
 							<tr>
 							<td>{{ $index +1 }}</td>
-			  						<td>{{$row->request_no}}</td>
+			  						<td>{{$row->accomodation_code}}</td>
                                       <td>{{$row->student->user->name ?? ''}}</td>
                                       <td>{{$row->education->name ?? ''}}</td>
                                       <td>{{$row->status->name ?? ''}}</td>
                                       <td> <?php $date = date_create($row->request_date)?>
-                  {{ date_format($date,"d-m-Y") }}</td>
+									  <?php  if ($row->request_date) {
+                            echo date_format($date,"d-m-Y");
+                        } else {
+                            echo " ";
+                        }
+                        ?></td>
 									  <td>
                                       <a href="{{ route('accomodationRequest.edit', $row->id) }}" class="btn btn-info d-inline-block">edit</a>
                                         <a href="#" onclick="destroy('this Accomodation','{{$row->id}}')" class="btn d-inline-block btn-danger">delete</a>
