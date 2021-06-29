@@ -82,7 +82,7 @@ class AuthController extends BaseController
         try
         {
             if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-                $user = Auth::guard('student')->user();
+                $user = Auth::user();
                 $user->accessToken = $user->createToken('MyApp')->accessToken;
 
                 return $this->sendResponse($user, 'User login successfully.');
