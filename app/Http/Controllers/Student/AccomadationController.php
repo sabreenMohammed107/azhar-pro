@@ -121,7 +121,7 @@ else{
                 $student = Student::where('user_id', '=', $user->id)->first();
                 $data = [
                     'mobile' => $request->input('mobile'),
-                    'phone' => $request->input('phone'),
+                   
                     'gender' => $request->input('gender'),
                     'birth_date' => Carbon::parse($request->input('birth_date')),
                     'birth_place' => $request->input('birth_place'),

@@ -54,13 +54,13 @@
                 </div>
 				<div class="col-md-6 form-group">
 					<label for="tel">Phone</label>
-					<input type="tel" id="tel" name="phone" value="{{$row->phone}}" class="form-control form-control-lg" value="002 215 54 478">
+					<input type="tel" id="tel" name="phone" disabled value="{{$row->user->phone ?? ''}}" class="form-control form-control-lg" value="002 215 54 478">
 				</div>				
 				<div class="col-md-6 form-group">
 					<label for="gender">Gender</label>
 					<select name="gender" class="form-control form-control-lg" id="gender">
 						<option value="1" @if($row->gender==1) selected @endif>Male</option>
-						<option value="0" @if($row->gender !=1)>Female @endif</option>
+						<option value="0" @if($row->gender !=1)>selected @endif>Female</option>
 					</select>
 				</div>
 				<div class="col-md-6 form-group">

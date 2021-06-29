@@ -26,7 +26,7 @@ class LeavesController extends BaseController
         $user = Auth::user();
         $validator = Validator::make($request->all(), [
            
-            'education_year_id' => 'required',
+            // 'education_year_id' => 'required',
             
 
         ]);
@@ -106,5 +106,17 @@ if(Education_year::where('current','=',1)->first()){
         }
 
     }
+    public function leavesAll(){
+      
+        try
+        {
+            $user=Auth::user()->id;
+            $student=Student::where('user_id','=',$user)->first();
+            $rows=Leaves_request::where('student_id','=',$student->id)->get();
+            return $this->sendResponse($rows, 'All Leaves Retrieved  Successfully');   
+        } catch (\Exception $e) {
+            return $this->sendError($e->getMessage(), 'Error happens!!');
+        }
+     }
 
 }

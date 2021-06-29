@@ -99,7 +99,7 @@
           </div>
           <div class="ml-auto">
             <div class="social-wrap">
-              <a href="#"><span class="icon-facebook"></span></a>
+              <a href="https://www.facebook.com/AlAzharUniversity/" target="_blank" ><span class="icon-facebook"></span></a>
               <a href="#"><span class="icon-twitter"></span></a>
               <a href="#"><span class="icon-linkedin"></span></a>
 

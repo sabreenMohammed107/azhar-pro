@@ -53,7 +53,7 @@
 								<tr>
 									<th width="20%">Phone</th>
 									<td width="2%">:</td>
-									<td>{{$row->phone}}</td>
+									<td>{{$row->user->phone ?? ''}}</td>
 								</tr>
 								<tr>
 									<th width="20%">Birth Date</th>

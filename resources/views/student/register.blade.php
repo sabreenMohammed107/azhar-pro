@@ -37,6 +37,10 @@
                             <input type="email" id="email" name="email" class="form-control form-control-lg">
                         </div>
                         <div class="col-md-12 form-group">
+                            <label for="email">Phone</label>
+                            <input type="email" id="tel" name="phone" class="form-control form-control-lg">
+                        </div>
+                        <div class="col-md-12 form-group">
                             <label for="pword">Password</label>
                             <input type="password" id="pword" name="password" class="form-control form-control-lg">
                         </div>

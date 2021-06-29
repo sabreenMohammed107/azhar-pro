@@ -52,7 +52,7 @@
                 </div>
 				<div class="col-md-6 form-group">
 					<label for="tel">Phone</label>
-					<input type="tel" readonly id="tel" value="{{$row->phone}}" class="form-control form-control-lg">
+					<input type="tel" readonly id="tel" value="{{$row->user->phone ?? ''}}" class="form-control form-control-lg">
 				</div>				
 				<div class="col-md-6 form-group">
 					<label for="gender">Gender</label>

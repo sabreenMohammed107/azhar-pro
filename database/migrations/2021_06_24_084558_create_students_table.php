@@ -17,7 +17,7 @@ class CreateStudentsTable extends Migration
             $table->id();
             
             $table->string('mobile')->nullable();
-            $table->string('phone')->nullable();
+            
             $table->boolean('gender')->nullable();
             $table->dateTime('birth_date',6)->nullable();
             $table->string('birth_place')->nullable();

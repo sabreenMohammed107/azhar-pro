@@ -9,7 +9,7 @@ class Student extends Model
     protected $fillable = [
        
     'mobile',
-    'phone',
+   
     'gender',
     'birth_date',
     'birth_place',

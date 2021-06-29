@@ -36,6 +36,9 @@ Route::middleware('auth:api')->group(function () {
     // leaves
     Route::post('leave-request', 'Api\LeavesController@leaveRequest');
     Route::post('leave-status/{code}', 'Api\LeavesController@leaveStatus');
+    //All
+    Route::get('all-accomodation', 'Api\AccomodationController@accomodatationAll');
+    Route::get('all-leaves', 'Api\LeavesController@leavesAll');
     });
 
 

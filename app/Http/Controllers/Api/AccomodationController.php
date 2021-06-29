@@ -28,7 +28,7 @@ class AccomodationController extends BaseController
         $validator = Validator::make($request->all(), [
             // 'student_id' => 'required',
             // 'education_year_id' => 'required',
-             'request_date' => 'required',
+            //  'request_date' => 'required',
 
         ]);
 
@@ -187,4 +187,17 @@ class AccomodationController extends BaseController
 
         return $imageName;
     }
+
+    public function accomodatationAll(){
+      
+        try
+        {
+            $user=Auth::user()->id;
+            $student=Student::where('user_id','=',$user)->first();
+            $rows=Accomodation_request::where('student_id','=',$student->id)->get();
+            return $this->sendResponse($rows, 'All Accomodation Retrieved  Successfully');   
+        } catch (\Exception $e) {
+            return $this->sendError($e->getMessage(), 'Error happens!!');
+        }
+     }
 }
