@@ -40,7 +40,7 @@ class AccomodationController extends BaseController
         {
             //for make all updates in one shot
             DB::beginTransaction();
-            try {
+            // try {
                 // Disable foreign key checks!
                 DB::statement('SET FOREIGN_KEY_CHECKS=0;');
                 //udate student Table
@@ -118,12 +118,12 @@ class AccomodationController extends BaseController
                 DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
                 return $this->sendResponse($accomodate, 'Accomomdate Request Send Successfully');
-            } catch (\Throwable $th) {
-                //throw $th;
-                DB::rollBack();
+            // } catch (\Throwable $th) {
+            //     //throw $th;
+            //     DB::rollBack();
 
-                return $this->sendError(null, 'Error in data saving or update!');
-            }
+            //     return $this->sendError(null, 'Error in data saving or update!');
+            // }
         } catch (\Exception $e) {
             return $this->sendError($e->getMessage(), 'Error happens!!');
         }
