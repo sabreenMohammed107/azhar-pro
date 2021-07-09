@@ -43,7 +43,7 @@
 								<tr>
 									<th width="20%">Gender</th>
 									<td width="2%">:</td>
-									<td>@if($row->gender==1) Male @else Female @endif</td>
+									<td>@if($row->gender=="1") Male @else Female @endif</td>
 								</tr>
 								<tr>
 									<th width="20%">Mobile</th>
