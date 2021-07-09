@@ -85,7 +85,7 @@
                       </div>
                       <div class="col-md-12">
                           <div class="form-group">
-                              <label  >{{ __('Name') }}</label>
+                              <label  >{{ __('Phone') }}</label>
                               <div class="input-group">
                                   <input type="text" id="newTitle" name="phone" value="{{$row->phone}}" class="form-control"
                                      placeholder="phone">
@@ -152,7 +152,7 @@
                       </div>
                       <div class="col-md-12">
                           <div class="form-group">
-                              <label  >{{ __('Name') }}</label>
+                              <label  >{{ __('Phone') }}</label>
                               <div class="input-group">
                                   <input type="text" id="newTitle" name="phone"  class="form-control"
                                      placeholder="phone">

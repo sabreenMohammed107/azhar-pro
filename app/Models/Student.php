@@ -59,4 +59,9 @@ class Student extends Model
     public function grade(){
         return $this->belongsTo('App\Models\Grade','current_grade_id');
     }
+
+    public function accomodate()
+{
+    return $this->hasOne('App\Models\Accomodation_request')->latest();
+}
 }

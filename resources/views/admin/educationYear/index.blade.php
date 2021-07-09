@@ -72,7 +72,7 @@
                       </div>
                       <div class="col-md-12">
                           <div class="form-group">
-                          <input type="checkbox" class="form-check-input" name="current" @if($row->current==1) checked value="1" @else  value="0"  @endif id="exampleCheck1">
+                          <input type="checkbox" class="form-check-input" name="current" @if($row->current==1) checked  @else    @endif value="no" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Current</label>
                           </div>
                       </div>
@@ -127,7 +127,7 @@
                          
                           <div class="col-md-12">
                           <div class="form-group">
-                          <input type="checkbox" class="form-check-input" name="current" checked value="1" id="exampleCheck1">
+                          <input type="checkbox" class="form-check-input" name="current"  value="no" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Current</label>
                           </div>
                       </div> 

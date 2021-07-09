@@ -30,7 +30,7 @@ Route::middleware('auth:api')->group(function () {
 
     Route::post('logout', 'Api\AuthController@logout');
     // accomodate
-    Route::post('accomodate-request', 'Api\AccomodationController@accomodateRequest');
+    Route::post('accomodate-request', 'Api\AccomodationController@accomodateRequest')->name('accomodate-request');
     Route::post('accomodate-status/{code}', 'Api\AccomodationController@accomodateStatus');
 
     // leaves

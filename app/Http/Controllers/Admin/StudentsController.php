@@ -71,7 +71,7 @@ class StudentsController extends Controller
      */
     public function show($id)
     {
-        $row = Student::where('id', '=', $id)->first();
+        $row = Student::with('accomodate')->where('id', '=', $id)->first();
         $parentData=Parennt::where('student_id','=',$id)->firstOrNew();
         return view($this->viewName . 'edit', compact('row','parentData'));
     }

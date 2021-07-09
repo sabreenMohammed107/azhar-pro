@@ -44,7 +44,7 @@
         <div class="d-flex align-items-center">
           <div class="site-logo">
             <a href="{{url('/')}}" class="d-block">
-				<img src="{{ asset('webassets/images/logo.jpg')}}" alt="Image" class="img-fluid main-logo"> Alazhar University
+				<img src="{{ asset('webassets/images/logo.jpg')}}" alt="Image" class="img-fluid main-logo"><span style="font-size: 25px;">Madentak</span> 
             </a>
           </div>
           <div class="mr-auto">

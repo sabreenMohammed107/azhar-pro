@@ -58,7 +58,15 @@ class EducationYearController extends Controller
      */
     public function store(Request $request)
     {
-        $this->object::create($request->except('_token'));
+        $data=$request->except(['_token','current']);
+        \Log::info($request->input('current'));
+        if($request->input('current')){
+            $data['current']=1;
+        }else{
+            $data['current']=0;
+        }
+      
+        $this->object::create($data);
         return redirect()->route($this->routeName . 'index')->with('flash_success', $this->message);
     }
 
@@ -93,7 +101,16 @@ class EducationYearController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->object::findOrFail($id)->update($request->except('_token'));
+        $data=$request->except(['_token','current']);
+        \Log::info($request->input('current'));
+        if($request->input('current')){
+            $data['current']=1;
+        }else{
+            $data['current']=0;
+        }
+       
+      
+        $this->object::findOrFail($id)->update($data);
         return redirect()->route($this->routeName . 'index')->with('flash_success', $this->message);
     }
 

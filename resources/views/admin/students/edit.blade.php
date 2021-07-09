@@ -43,7 +43,7 @@
 				</div>
 				<div class="col-md-6 form-group">
 					<label for="accomodation">Accomodation Code</label>
-                    <input type="text" readonly id="fname" value="{{$row->accomodation_code}}" class="form-control form-control-lg">
+                    <input type="text" readonly id="fname" value="{{$row->accomodate->accomodation_code ?? ''}}" class="form-control form-control-lg">
 
 				</div>
                 <div class="col-md-6 form-group">
@@ -155,6 +155,7 @@
 			<h2><i class="flaticon-diploma"></i> Parent Data</h2>
 			<hr class="hr-yellow" />
 			<div class="row">
+			@if($parentData)
 				<div class="col-md-6 form-group">
 					<label for="fname">Full Name</label>
 					<input type="text" readonly value="{{$parentData->name}}" id="fname" class="form-control form-control-lg">
@@ -201,6 +202,7 @@
 					<label for="message">Notes</label>
 					<textarea name="" readonly id="message" cols="20" rows="2" class="form-control">{{$parentData->notes}}</textarea>
 				</div>
+				@endif
 				<div class="col-12">
                 <a href="{{route('students.index')}}" class="btn btn-primary btn-lg px-5">Back</a>
 					<!-- <input type="submit" value="Submit" class="btn btn-primary btn-lg px-5"> -->
