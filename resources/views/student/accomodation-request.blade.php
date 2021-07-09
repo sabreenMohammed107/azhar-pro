@@ -57,7 +57,7 @@
 					<label for="gender">Gender</label>
 					<select name="gender" class="form-control form-control-lg" id="gender">
 						<option value="1" @if($row->gender=="1") selected @endif>Male</option>
-						<option value="0" @if($row->gender !="1")>selected @endif>Female</option>
+						<option value="0" @if($row->gender !="1") selected @endif>Female</option>
 					</select>
 				</div>
 				<div class="col-md-6 form-group">
