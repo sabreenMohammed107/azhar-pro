@@ -79,7 +79,7 @@ class AccomodationController extends BaseController
                     $data['guarantee_work_img'] = $this->UplaodImage($guarantee_work_img);
 
                 }
-                $student->update($data);
+                // $student->update($data);
                 //create parent Table
                //create parent Table
         
@@ -95,7 +95,7 @@ class AccomodationController extends BaseController
             $parrent->nid_issue_date= Carbon::parse($request->input('pnid_issue_date'));
             $parrent->student_id = $student->id;
             $parrent->notes = $request->input('pnotes');
-            $parrent->save();
+            // $parrent->save();
                 //create accomodation request
                 $max = Accomodation_request::latest('accomodation_code')->first();
 
