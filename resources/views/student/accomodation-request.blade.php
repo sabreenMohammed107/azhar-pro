@@ -250,6 +250,7 @@ if ($parentData->nid_issue_date) {
                     <input type="text" value="{{$currentYear->name ?? ''}}" disabled id="address" class="form-control form-control-lg">
 
 				</div>
+				
 				<div class="col-md-6 form-group">
 					<label for="ndate">Request Date</label>
 					<input type="date" id="bdate" name="request_date" value="<?php echo date('Y-m-d'); ?>" class="form-control form-control-lg" disabled>
