@@ -35,7 +35,7 @@
   						<li><a href="#">002 221 21 542</a></li>
   						<li><a href="#">010 123 45 977</a></li>
   						<li><a href="#">info@azhar-university.com</a></li>
-  						<li><a href="#">www.azhar-university-eg.com</a></li>
+  						<li><a href="http://www.azhar.edu.eg/" target="_blank">www.azhar-university-eg.com</a></li>
   					</ul>
   				</div>
   			</div>
@@ -44,7 +44,7 @@
   					<div class="copyright">
   						<p>
   							Copyright &copy;
-  							<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made with <i class="icon-heart" aria-hidden="true"></i> by Azhar Team
+  							<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made  <i class="icon-heart" aria-hidden="true"></i> by Azhar Team
   						</p>
   					</div>
   				</div>

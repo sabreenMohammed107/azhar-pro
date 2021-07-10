@@ -71,7 +71,7 @@ if ($row->birth_date) {
 }
 ?>
 					<label for="bdate">Birth Date</label>
-					<input type="date" id="bdate" value="{{$result}}" class="form-control form-control-lg">
+					<input type="date" name="birth_date" id="bdate" value="{{$result}}" class="form-control form-control-lg">
 				</div>
 				<div class="col-md-6 form-group">
 					<label for="bplace">Birth Place</label>
@@ -97,7 +97,7 @@ if ($row->nid_issue_date) {
     $result2 = ' ';
 }
 ?>
-					<input type="date" id="bdate" value="{{$result2}}" class="form-control form-control-lg">
+					<input type="date" name="nid_issue_date" id="bdate" value="{{$result2}}" class="form-control form-control-lg">
 				</div>
 				<div class="col-md-6 form-group">
 					<label for="address">Address</label>
@@ -173,7 +173,7 @@ if ($row->nid_issue_date) {
 				</div>
 				<div class="col-md-12 form-group">
 					<label for="message">Notes</label>
-					<textarea name="" id="message" cols="20" rows="2" class="form-control"></textarea>
+					<textarea name="notes" id="message" cols="20" rows="2" class="form-control">{{$row->notes}}</textarea>
 				</div>
             </div>
 			<br />
@@ -215,7 +215,7 @@ if ($row->nid_issue_date) {
 				</div>
 				<div class="col-md-6 form-group">
 					<label for="nid">Student ID</label>
-					<input type="text" name="student_id" disabled value="{{$row->id ?? ''}}" id="nid" class="form-control form-control-lg">
+					<input type="text" name="student_id" disabled value="{{$row->user->name ?? ''}}" id="nid" class="form-control form-control-lg">
 				</div>
 				<div class="col-md-6 form-group">
 					<label for="nplace">National Issue Place</label>
@@ -232,7 +232,7 @@ if ($parentData->nid_issue_date) {
     $result3 = ' ';
 }
 ?>
-					<input type="date" id="bdate" value="{{$result3}}" class="form-control form-control-lg">
+					<input type="date" name="pnid_issue_date" id="bdate" value="{{$result3}}" class="form-control form-control-lg">
 				</div>
 				<div class="col-md-12 form-group">
 					<label for="message">Notes</label>
@@ -250,7 +250,7 @@ if ($parentData->nid_issue_date) {
                     <input type="text" value="{{$currentYear->name ?? ''}}" disabled id="address" class="form-control form-control-lg">
 
 				</div>
-				
+
 				<div class="col-md-6 form-group">
 					<label for="ndate">Request Date</label>
 					<input type="date" id="bdate" name="request_date" value="<?php echo date('Y-m-d'); ?>" class="form-control form-control-lg" disabled>

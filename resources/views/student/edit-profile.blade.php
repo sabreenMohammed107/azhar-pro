@@ -74,7 +74,7 @@
 }
 ?>
 					<label for="bdate">Birth Date</label>
-					<input type="date" id="bdate" value="{{$result}}" class="form-control form-control-lg">
+					<input type="date" name="birth_date" id="bdate" value="{{$result}}" class="form-control form-control-lg">
 				</div>
 				<div class="col-md-6 form-group">
 					<label for="bplace">Birth Place</label>
@@ -100,7 +100,7 @@
     $result2= ' ';
 }
 ?>
-					<input type="date" id="bdate" value="{{$result2}}" class="form-control form-control-lg">
+					<input type="date" name="nid_issue_date" id="bdate" value="{{$result2}}" class="form-control form-control-lg">
 				</div>		
 				<div class="col-md-6 form-group">
 					<label for="address">Address</label>
@@ -129,7 +129,7 @@
 				</div>
 				<div class="col-md-6 form-group">
 					<label for="cyear">Current Year</label>
-                    <input type="text" name="faculty_code" value="{{$currentYear->name ?? ''}}" id="address" class="form-control form-control-lg">
+                    <input type="text" name="" value="{{$currentYear->name ?? ''}}" id="address" class="form-control form-control-lg">
 
 				</div>
 				<div class="col-md-6 form-group">
@@ -180,7 +180,7 @@
 				</div>
 				<div class="col-md-12 form-group">
 					<label for="message">Notes</label>
-					<textarea name="" id="message" cols="20" rows="2" class="form-control"></textarea>
+					<textarea name="notes" id="message" cols="20" rows="2" class="form-control">{{$row->notes}}</textarea>
 				</div>
             </div>
 			<br />
@@ -222,7 +222,7 @@
 				</div>
 				<div class="col-md-6 form-group">
 					<label for="nid">Student ID</label>
-					<input type="text" name="student_id" disabled value="{{$row->id ?? ''}}" id="nid" class="form-control form-control-lg">
+					<input type="text" name="student_id" disabled value="{{$row->user->name ?? ''}}" id="nid" class="form-control form-control-lg">
 				</div>
 				<div class="col-md-6 form-group">
 					<label for="nplace">National Issue Place</label>
