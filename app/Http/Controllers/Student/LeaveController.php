@@ -20,6 +20,9 @@ class LeaveController extends Controller
     * @return \Illuminate\Http\Response
     */
 public function index(Request $request){
+    Session::forget('message');
+Session::forget('info');
+Session::forget('error'); 
     $user=Auth::guard('student')->user()->id;
     $student=Student::where('user_id','=',$user)->first();
     $accomodate=Accomodation_request::where('student_id','=',$student->id)->where('request_status_id','=',2)->first();

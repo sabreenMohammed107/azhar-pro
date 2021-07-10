@@ -30,6 +30,9 @@ class AccomadationController extends Controller
      * @return \Illuminate\Http\Response
      */
  public function index(){
+    Session::forget('message');
+    Session::forget('info');
+    Session::forget('error'); 
      $user=Auth::guard('student')->user()->id;
      $student=Student::where('user_id','=',$user)->first();
      $rows=Accomodation_request::where('student_id','=',$student->id)->get();
