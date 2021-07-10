@@ -5,7 +5,7 @@
           <div class="row align-items-end">
             <div class="col-lg-7">
               <h2 class="mb-0">Requests Status</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+              <p>Now, You can request to have your accomodation in Azhar Madentak online.</p>
             </div>
           </div>
         </div>

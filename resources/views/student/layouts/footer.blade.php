@@ -3,7 +3,7 @@
   			<div class="row">
   				<div class="col-lg-6">
   					<p class="mb-4"><img src="{{ asset('webassets/images/logo.png')}}" alt="Image" class="img-fluid"></p>
-  					<p>Lorem ipsum dolor sit amet consectetur adipisicing <br /> elit. Beatae nemo minima qui dolor, iusto iure.</p>
+  					<p>Al-Azhar University is a public university in Cairo, Egypt. Associated with Al-Azhar Mosque in Islamic Cairo,</p>
   					<p><a href="#">Learn More</a></p>
   				</div>
   				<div class="col-lg-3">

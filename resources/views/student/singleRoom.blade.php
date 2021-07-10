@@ -6,7 +6,7 @@
           <div class="row align-items-end">
             <div class="col-lg-7">
               <h2 class="mb-0">Rooms</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+              <p>Madentak rooms are available to be cheked and you can reserve your room online</p>
             </div>
           </div>
         </div>
@@ -57,7 +57,7 @@
                         <h2 class="section-title-underline mb-5">
                             <span>Room Details</span>
                         </h2>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam provident repellendus deserunt?</p>
+                        <p>Madentak rooms are available to be cheked and you can reserve your room online</p>
 
                         <ul class="ul-check primary list-unstyled mb-5">
                         <li>Room No : {{$row->room_no}}</li>
