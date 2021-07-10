@@ -44,7 +44,7 @@
   					<div class="copyright">
   						<p>
   							Copyright &copy;
-  							<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made with <i class="icon-heart" aria-hidden="true"></i> by Senior Steps
+  							<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made with <i class="icon-heart" aria-hidden="true"></i> by Azhar Team
   						</p>
   					</div>
   				</div>
