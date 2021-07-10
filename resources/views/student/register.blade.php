@@ -38,7 +38,7 @@
                         </div>
                         <div class="col-md-12 form-group">
                             <label for="email">Phone</label>
-                            <input type="email" id="tel" name="phone" class="form-control form-control-lg">
+                            <input type="text" id="tel" name="phone" class="form-control form-control-lg">
                         </div>
                         <div class="col-md-12 form-group">
                             <label for="pword">Password</label>
