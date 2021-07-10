@@ -38,6 +38,7 @@ class AccomadationController extends Controller
      $rows=Accomodation_request::where('student_id','=',$student->id)->get();
      return view($this->viewName.'all-accomodations', compact('rows'));
  }
+ 
 
  public function showAccomodateStatus(){
     $row=new Accomodation_request();
